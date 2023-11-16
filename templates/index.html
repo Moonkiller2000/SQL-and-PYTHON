@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Login</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <form method="POST" action="{{ url_for('register') }}">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <h1>Login</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="login-username">Nombre de Usuario:</label>
+        <input type="text" id="login-username" name="username" required>
+        <br>
+        <label for="login-password">Contraseña:</label>
+        <input type="password" id="login-password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h1>Usuarios Registrados</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

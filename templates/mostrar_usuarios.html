@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+</head>
+<body>
+    <h1>Usuarios Registrados</h1>
+    <table border="1">
+        <tr>
+            <th>Nombre de Usuario</th>
+            <th>Contraseña Hasheada</th>
+            <th>Sal</th>
+        </tr>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[1] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <td>{{ usuario[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
